@@ -68,28 +68,16 @@ class ChromeCastButton extends StatelessWidget {
 
   Future<void> _onPlatformViewCreated(int id) async {
     final ChromeCastController controller = await ChromeCastController.init(id);
-    if (onButtonCreated != null) {
-      onButtonCreated(controller);
-    }
-    if (onSessionStarted != null) {
-      _chromeCastPlatform
-          .onSessionStarted(id: id)
-          .listen((_) => onSessionStarted());
-    }
-    if (onSessionEnded != null) {
-      _chromeCastPlatform
-          .onSessionEnded(id: id)
-          .listen((_) => onSessionEnded());
-    }
-    if (onRequestCompleted != null) {
-      _chromeCastPlatform
-          .onRequestCompleted(id: id)
-          .listen((_) => onRequestCompleted());
-    }
-    if (onRequestFailed != null) {
-      _chromeCastPlatform
-          .onRequestFailed(id: id)
-          .listen((event) => onRequestFailed(event.error));
-    }
+    onButtonCreated(controller);
+    _chromeCastPlatform
+        .onSessionStarted(id: id)
+        .listen((_) => onSessionStarted());
+    _chromeCastPlatform.onSessionEnded(id: id).listen((_) => onSessionEnded());
+    _chromeCastPlatform
+        .onRequestCompleted(id: id)
+        .listen((_) => onRequestCompleted());
+    _chromeCastPlatform
+        .onRequestFailed(id: id)
+        .listen((event) => onRequestFailed(event.error));
   }
 }
