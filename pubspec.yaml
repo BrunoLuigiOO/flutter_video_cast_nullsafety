@@ -1,0 +1,26 @@
+name: flutter_video_cast_nullsafety
+description: A new flutter plugin project.
+version: 0.0.5
+homepage:
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  stream_transform: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_video_cast_nullsafety
+        pluginClass: FlutterVideoCastNullsafetyPlugin
+      ios:
+        pluginClass: FlutterVideoCastNullsafetyPlugin
