@@ -1,4 +1,4 @@
-package com.ohmconception.flutter_video_cast_nullsafety
+package com.example.flutter_video_cast_nullsafety
 
 import android.app.Activity
 import android.content.Context
