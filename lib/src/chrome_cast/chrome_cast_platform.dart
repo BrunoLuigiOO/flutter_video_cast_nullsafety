@@ -85,6 +85,11 @@ abstract class ChromeCastPlatform {
     throw UnimplementedError('seek() has not been implemented.');
   }
 
+  /// Returns `true` when a cast session is buffering, `false` otherwise.
+  Future<bool> isBuffering({required int id}) {
+    throw UnimplementedError('seek() has not been implemented.');
+  }
+
   /// Returns `true` when a cast session is playing, `false` otherwise.
   Future<bool> isPlaying({required int id}) {
     throw UnimplementedError('isPlaying() has not been implemented.');

@@ -81,6 +81,9 @@ class ChromeCastController: NSObject, FlutterPlatformView {
         case "chromeCast#isConnected":
             result(isConnected())
             break
+        case "chromeCast#isBuffering":
+            result(isBuffering())
+            break
         case "chromeCast#isPlaying":
             result(isPlaying())
             break

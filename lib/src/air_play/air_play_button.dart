@@ -53,13 +53,7 @@ class AirPlayButton extends StatelessWidget {
 
   Future<void> _onPlatformViewCreated(int id) async {
     await _airPlayPlatform.init(id);
-    if (onRoutesOpening != null) {
-      _airPlayPlatform.onRoutesOpening(id: id).listen((_) => onRoutesOpening());
-    }
-    if (onRoutesClosed != null) {
-      _airPlayPlatform
-          .onRoutesClosed(id: id)
-          .listen((event) => onRoutesClosed());
-    }
+    _airPlayPlatform.onRoutesOpening(id: id).listen((_) => onRoutesOpening());
+    _airPlayPlatform.onRoutesClosed(id: id).listen((event) => onRoutesClosed());
   }
 }

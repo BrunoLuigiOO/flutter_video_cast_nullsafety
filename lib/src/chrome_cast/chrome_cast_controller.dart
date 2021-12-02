@@ -11,7 +11,7 @@ class ChromeCastController {
 
   /// Initialize control of a [ChromeCastButton] with [id].
   static Future<ChromeCastController> init(int id) async {
-    assert(id != null);
+    assert(true);
     await _chromeCastPlatform.init(id);
     return ChromeCastController._(id: id);
   }
@@ -56,6 +56,11 @@ class ChromeCastController {
   /// Returns `true` when a cast session is connected, `false` otherwise.
   Future<bool> isConnected() {
     return _chromeCastPlatform.isConnected(id: id);
+  }
+
+  /// Returns `true` when a cast session is buffering, `false` otherwise.
+  Future<bool> isBuffering() {
+    return _chromeCastPlatform.isBuffering(id: id);
   }
 
   /// Returns `true` when a cast session is playing, `false` otherwise.
