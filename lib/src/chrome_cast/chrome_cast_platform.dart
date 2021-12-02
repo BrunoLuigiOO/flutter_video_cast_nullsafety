@@ -47,7 +47,7 @@ abstract class ChromeCastPlatform {
 
   /// A request has failed.
   Stream<RequestDidFailEvent> onRequestFailed({required int id}) {
-    throw UnimplementedError('onSessionEnded() has not been implemented.');
+    throw UnimplementedError('onRequestFailed() has not been implemented.');
   }
 
   /// Load a new media by providing an [url].
@@ -72,7 +72,7 @@ abstract class ChromeCastPlatform {
   ///
   /// If [relative] is set to true sets the video position to an [interval] from the current position.
   Future<void> seek(bool relative, double interval, {required int id}) {
-    throw UnimplementedError('pause() has not been implemented.');
+    throw UnimplementedError('seek() has not been implemented.');
   }
 
   /// Stop the current video.
@@ -82,12 +82,12 @@ abstract class ChromeCastPlatform {
 
   /// Returns `true` when a cast session is connected, `false` otherwise.
   Future<bool> isConnected({required int id}) {
-    throw UnimplementedError('seek() has not been implemented.');
+    throw UnimplementedError('isConnected() has not been implemented.');
   }
 
   /// Returns `true` when a cast session is buffering, `false` otherwise.
   Future<bool> isBuffering({required int id}) {
-    throw UnimplementedError('seek() has not been implemented.');
+    throw UnimplementedError('isBuffering() has not been implemented.');
   }
 
   /// Returns `true` when a cast session is playing, `false` otherwise.
