@@ -30,11 +30,6 @@ class RequestDidCompleteEvent extends ChromeCastEvent {
   RequestDidCompleteEvent(int id) : super(id);
 }
 
-class RequestIsBuffering extends ChromeCastEvent {
-  /// Build a RequestIsBuffering Event triggered from the button represented by `id`.
-  RequestIsBuffering(int id) : super(id);
-}
-
 /// An event fired when a request of a [id] failed.
 class RequestDidFailEvent extends ChromeCastEvent {
   /// The error message.

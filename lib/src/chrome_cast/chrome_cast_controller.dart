@@ -59,9 +59,9 @@ class ChromeCastController {
   }
 
   /// Returns `true` when a cast session is buffering, `false` otherwise.
-  // Stream<bool> isBuffering() {
-  //   return _chromeCastPlatform.isBuffering(id: id);
-  // }
+  Future<bool> isBuffering() {
+    return _chromeCastPlatform.isBuffering(id: id);
+  }
 
   /// Returns `true` when a cast session is playing, `false` otherwise.
   Future<bool> isPlaying() {

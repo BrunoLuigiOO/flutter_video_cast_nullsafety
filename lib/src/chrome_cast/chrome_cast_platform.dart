@@ -45,11 +45,6 @@ abstract class ChromeCastPlatform {
     throw UnimplementedError('onRequestCompleted() has not been implemented.');
   }
 
-  /// A request is Buffering.
-  Stream<RequestIsBuffering> onRequestBuffering({required int id}) {
-    throw UnimplementedError('isBuffering() has not been implemented.');
-  }
-
   /// A request has failed.
   Stream<RequestDidFailEvent> onRequestFailed({required int id}) {
     throw UnimplementedError('onRequestFailed() has not been implemented.');
@@ -88,6 +83,11 @@ abstract class ChromeCastPlatform {
   /// Returns `true` when a cast session is connected, `false` otherwise.
   Future<bool> isConnected({required int id}) {
     throw UnimplementedError('isConnected() has not been implemented.');
+  }
+
+  /// Returns `true` when a cast session is buffering, `false` otherwise.
+  Future<bool> isBuffering({required int id}) {
+    throw UnimplementedError('isBuffering() has not been implemented.');
   }
 
   /// Returns `true` when a cast session is playing, `false` otherwise.

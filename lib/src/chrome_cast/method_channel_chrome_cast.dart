@@ -66,11 +66,6 @@ class MethodChannelChromeCast extends ChromeCastPlatform {
   }
 
   @override
-  Stream<RequestIsBuffering> onRequestBuffering({required int id}) {
-    return _events(id).whereType<RequestIsBuffering>();
-  }
-
-  @override
   Stream<RequestDidFailEvent> onRequestFailed({required int id}) {
     return _events(id).whereType<RequestDidFailEvent>();
   }
@@ -111,11 +106,11 @@ class MethodChannelChromeCast extends ChromeCastPlatform {
         false;
   }
 
-  // @override
-  // Future<bool> isBuffering({required int id}) async {
-  //   return await channel(id)!.invokeMethod<bool>('chromeCast#isBuffering') ??
-  //       false;
-  // }
+  @override
+  Future<bool> isBuffering({required int id}) async {
+    return await channel(id)!.invokeMethod<bool>('chromeCast#isBuffering') ??
+        false;
+  }
 
   @override
   Future<bool> isPlaying({required int id}) async {
@@ -133,9 +128,6 @@ class MethodChannelChromeCast extends ChromeCastPlatform {
         break;
       case 'chromeCast#requestDidComplete':
         _eventStreamController.add(RequestDidCompleteEvent(id));
-        break;
-      case 'chromeCast#requestBuffering':
-        _eventStreamController.add(RequestIsBuffering(id));
         break;
       case 'chromeCast#requestDidFail':
         _eventStreamController
