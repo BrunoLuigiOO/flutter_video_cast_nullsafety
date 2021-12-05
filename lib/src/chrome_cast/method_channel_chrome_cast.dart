@@ -107,9 +107,16 @@ class MethodChannelChromeCast extends ChromeCastPlatform {
   }
 
   @override
-  Future<bool> isBuffering({required int id}) async {
-    return await channel(id)!.invokeMethod<bool>('chromeCast#isBuffering') ??
-        false;
+  Stream<bool> isBuffering({required int id}) {
+    return Stream.fromFuture(
+      Future(
+        () async {
+          return await channel(id)!
+                  .invokeMethod<bool>('chromeCast#isBuffering') ??
+              false;
+        },
+      ),
+    );
   }
 
   @override

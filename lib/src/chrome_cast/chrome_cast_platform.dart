@@ -86,7 +86,7 @@ abstract class ChromeCastPlatform {
   }
 
   /// Returns `true` when a cast session is buffering, `false` otherwise.
-  Future<bool> isBuffering({required int id}) {
+  Stream<bool> isBuffering({required int id}) {
     throw UnimplementedError('isBuffering() has not been implemented.');
   }
 
