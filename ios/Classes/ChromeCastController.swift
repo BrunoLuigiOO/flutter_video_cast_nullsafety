@@ -150,12 +150,13 @@ class ChromeCastController: NSObject, FlutterPlatformView {
         return sessionManager.currentCastSession?.remoteMediaClient?.connected ?? false
     }
 
-    private func isBuffering() -> Bool {
-        return sessionManager.currentCastSession?.remoteMediaClient?.mediaStatus?.playerState == GCKMediaPlayerState.buffering
-    }
+    // private func isBuffering() -> Bool {
+    //     return sessionManager.currentCastSession?.remoteMediaClient?.mediaStatus?.playerState == GCKMediaPlayerState.buffering
+    // }
 
     private func isPlaying() -> Bool {
-        return sessionManager.currentCastSession?.remoteMediaClient?.mediaStatus?.playerState == GCKMediaPlayerState.playing
+        // return sessionManager.currentCastSession?.remoteMediaClient?.mediaStatus?.playerState == GCKMediaPlayerState.playing
+        return sessionManager.currentCastSession?.remoteMediaClient?.mediaStatus?.playerState == GCKMediaPlayerState.buffering
     }
 
     private func addSessionListener() {
